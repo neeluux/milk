@@ -60,6 +60,9 @@ int main(int argc, char **argv) {
 		DrawText(TextFormat("AutoCAD"), screenWidth/(5/1)+35, 128, 20, WHITE);
 		DrawText(TextFormat("Water Damage"), screenWidth/(5/2)-72, 128, 20, WHITE);
 		DrawText(TextFormat("Matlab"), screenWidth/(5/2)+128, 128, 20, WHITE);
+		
+		// TODO: Instantiate the structs
+
 
 		// TODO: Input handling
 
