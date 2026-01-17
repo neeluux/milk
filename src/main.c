@@ -38,14 +38,14 @@ int main(int argc, char **argv) {
 	{
 		BeginDrawing();
 
-		// Colors {r, g, b, a}
+		// TODO: refactor into func/colors.h
+
 		Color limeGreen = {2, 249, 9, 255};
 		Color rainforestGreen = {0, 158, 117, 255};
 		Color moderatePink = {228, 91, 217, 255};
 		Color moderateBlue = {63, 85, 198, 255};
 		Color berryPurple = {99, 85, 137, 255};
-
-
+		
 		DrawRectangle(0, 0, screenWidth/5, screenHeight, limeGreen);
 		DrawRectangle(screenWidth/5, 0, screenWidth/5, screenHeight, rainforestGreen);
 		DrawRectangle(screenWidth/5*2, 0, screenWidth/5, screenHeight, moderatePink);
@@ -53,6 +53,16 @@ int main(int argc, char **argv) {
 		DrawRectangle(screenWidth/5*4, 0, screenWidth/5, screenHeight, berryPurple);
 
 		DrawText(TextFormat("+C0"), screenWidth/5*4+7, 360, 80, WHITE);
+
+		/* TODO: find an equation to get text in the center of a rectangle
+			 using only the screen width and height */
+		DrawText(TextFormat("SolidWorks"), screenWidth/(5*5)-6, 128, 20, WHITE);
+		DrawText(TextFormat("AutoCAD"), screenWidth/(5/1)+35, 128, 20, WHITE);
+		DrawText(TextFormat("Water Damage"), screenWidth/(5/2)-72, 128, 20, WHITE);
+		DrawText(TextFormat("Matlab"), screenWidth/(5/2)+128, 128, 20, WHITE);
+
+		// TODO: Input handling
+
 
 		mk_draw(&ctx);
 		EndDrawing();
