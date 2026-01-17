@@ -3,6 +3,9 @@
 #include <stdio.h>
 #include <raylib.h>
 
+// Color palette
+#define LIMEGREEN = (Color){}
+
 void mk_print_help(void) {
 	printf("Usage: milk <options>\n");
 }
@@ -29,13 +32,28 @@ int main(int argc, char **argv) {
 	const int screenHeight = 450;
 	InitWindow(screenWidth, screenHeight, "milk");
 
-	SetTargetFPS(60);
+	SetTargetFPS(10);
 
 	while (!WindowShouldClose())
 	{
-		// TODO: Handle input events
-
 		BeginDrawing();
+
+		// Colors {r, g, b, a}
+		Color limeGreen = {2, 249, 9, 255};
+		Color rainforestGreen = {0, 158, 117, 255};
+		Color moderatePink = {228, 91, 217, 255};
+		Color moderateBlue = {63, 85, 198, 255};
+		Color berryPurple = {99, 85, 137, 255};
+
+
+		DrawRectangle(0, 0, screenWidth/5, screenHeight, limeGreen);
+		DrawRectangle(screenWidth/5, 0, screenWidth/5, screenHeight, rainforestGreen);
+		DrawRectangle(screenWidth/5*2, 0, screenWidth/5, screenHeight, moderatePink);
+		DrawRectangle(screenWidth/5*3, 0, screenWidth/5, screenHeight, moderateBlue);
+		DrawRectangle(screenWidth/5*4, 0, screenWidth/5, screenHeight, berryPurple);
+
+		DrawText(TextFormat("+C0"), screenWidth/5*4+7, 360, 80, WHITE);
+
 		mk_draw(&ctx);
 		EndDrawing();
 	}
