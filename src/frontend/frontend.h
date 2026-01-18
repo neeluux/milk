@@ -6,5 +6,6 @@
 
 void mk_draw(const struct mk_context *ctx);
 void draw_rects(int rectangles, int screenWidth, int screenHeight);
+void add_item(int *numRects);
 
 #endif

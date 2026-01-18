@@ -24,3 +24,12 @@ void draw_rects(int rectangles, int screenWidth, int screenHeight) {
 		DrawRectangle(0, 0, screenWidth/rectangles, screenHeight, MODERATEPINK);
 	}
 }
+/*
+void add_item(int *numRects) {
+	ClearBackground(RAYWHITE);
+
+	Rectangle textBox
+
+	numRects++;
+}
+*/
