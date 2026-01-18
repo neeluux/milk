@@ -1,8 +1,8 @@
 #include "context.h"
 #include "frontend/frontend.h"
+#include "color.h"
 #include <stdio.h>
 #include <raylib.h>
-#include "color.h"
 
 void mk_print_help(void) {
 	printf("Usage: milk <options>\n");
