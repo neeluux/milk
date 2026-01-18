@@ -26,7 +26,7 @@ int main(int argc, char **argv) {
 
 	SetConfigFlags(FLAG_WINDOW_RESIZABLE);
 
-	const int screenWidth  = 800;
+	const int screenWidth  = 850;
 	const int screenHeight = 450;
 	InitWindow(screenWidth, screenHeight, "milk");
 
@@ -36,11 +36,7 @@ int main(int argc, char **argv) {
 	{
 		BeginDrawing();
 
-		DrawRectangle(0, 0, screenWidth/5, screenHeight, LIMEGREEN);
-		DrawRectangle(screenWidth/5, 0, screenWidth/5, screenHeight, RAINFORESTGREEN);
-		DrawRectangle(screenWidth/5*2, 0, screenWidth/5, screenHeight, MODERATEPINK);
-		DrawRectangle(screenWidth/5*3, 0, screenWidth/5, screenHeight, MODERATEBLUE);
-		DrawRectangle(screenWidth/5*4, 0, screenWidth/5, screenHeight, BERRYPURPLE);
+		draw_rects(5, screenWidth, screenHeight);
 
 		DrawText(TextFormat("+C0"), screenWidth/5*4+7, 360, 80, WHITE);
 
