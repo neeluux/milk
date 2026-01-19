@@ -16,6 +16,9 @@ struct mk_ticket_cat {
 struct mk_context {
 	struct mk_ticket_cat *ticket_cats;
 	size_t n_ticket_cats;
+
+	int screen_width;
+	int screen_height;
 };
 
 #endif

@@ -1,13 +1,8 @@
 #include "frontend.h"
 #include <raylib.h>
 
-void mk_draw(const struct mk_context *ctx) {
-	ClearBackground(RAYWHITE);
-	//DrawText("MILK", 190, 200, 20, LIGHTGRAY);
-}
-
-void draw_rects(int rectangles, int screenWidth, int screenHeight) {
-	if (rectangles <= 5) {
+static void draw_rects(int rectangles, int screenWidth, int screenHeight) {
+	if (rectangles <= 5 && rectangles > 0) {
 		for (int RECT = rectangles; RECT > 0; RECT--) {
 			// This is for the middle of the text, will be used in the future.
 			//int width = screenWidth / (2*RECT);
@@ -24,6 +19,13 @@ void draw_rects(int rectangles, int screenWidth, int screenHeight) {
 		DrawRectangle(0, 0, screenWidth/rectangles, screenHeight, MODERATEPINK);
 	}
 }
+
+void mk_draw(const struct mk_context *ctx) {
+	ClearBackground(RAYWHITE);
+	//DrawText("MILK", 190, 200, 20, LIGHTGRAY);
+	draw_rects(4, ctx->screen_width, ctx->screen_height);
+}
+
 /*
 void add_item(int *numRects) {
 	ClearBackground(RAYWHITE);

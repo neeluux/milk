@@ -4,6 +4,9 @@
 #include <stdio.h>
 #include <raylib.h>
 
+#define MK_DEFAULT_SCREEN_WIDTH 850
+#define MK_DEFAULT_SCREEN_HEIGHT 450
+
 void mk_print_help(void) {
 	printf("Usage: milk <options>\n");
 }
@@ -11,6 +14,9 @@ void mk_print_help(void) {
 void mk_context_init(struct mk_context *ctx) {
 	ctx->ticket_cats = NULL;
 	ctx->n_ticket_cats = 0;
+
+	ctx->screen_width = MK_DEFAULT_SCREEN_WIDTH;
+	ctx->screen_height = MK_DEFAULT_SCREEN_HEIGHT;
 }
 
 int main(int argc, char **argv) {
@@ -26,18 +32,14 @@ int main(int argc, char **argv) {
 
 	SetConfigFlags(FLAG_WINDOW_RESIZABLE);
 
-	const int screenWidth  = 850;
-	const int screenHeight = 450;
-	int numRects = 0;
-	InitWindow(screenWidth, screenHeight, "milk");
+	// int numRects = 0;
+	InitWindow(ctx.screen_width, ctx.screen_height, "milk");
 
 	SetTargetFPS(10);
 
 	while (!WindowShouldClose())
 	{
 		BeginDrawing();
-
-		draw_rects(numRects, screenWidth, screenHeight);
 
 		/* TODO: find an equation to get text in the center of a rectangle
 			 using only the screen width and height */
